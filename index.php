@@ -11,26 +11,26 @@ $arrHeader = array();
 $arrHeader[] = "Content-Type: application/json";
 $arrHeader[] = "Authorization: Bearer {$strAccessToken}";
  
-if($arrJson['events'][0]['message']['text'] == "ÊÇÑÊ´Õ"){
+if($arrJson['events'][0]['message']['text'] == "æ˜¯å’½å‡‘"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "ÊÇÑÊ´Õ ID ¤Ø³¤×Í ".$arrJson['events'][0]['source']['userId'];
-}else if($arrJson['events'][0]['message']['text'] == "ª×èÍÍÐäÃ"){
+  $arrPostData['messages'][0]['text'] = "æ˜¯å’½å‡‘ ID ã¸é•¿æ·„ ".$arrJson['events'][0]['source']['userId'];
+}else if($arrJson['events'][0]['message']['text'] == "î€¶æŸ°æ‰˜æ¶¿"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "©Ñ¹ÂÑ§äÁèÁÕª×èÍ¹Ð";
-}else if($arrJson['events'][0]['message']['text'] == "·ÓÍÐäÃä´éºéÒ§"){
+  $arrPostData['messages'][0]['text'] = "â”­å­¤å­¦æ·žæž‡æ‘˜é˜»å‡¸ï¿½";
+}else if($arrJson['events'][0]['message']['text'] == "é…šæ‰˜æ¶¿æµ¯æ¥¹æ©ï¿½"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "©Ñ¹·ÓÍÐäÃäÁèä´éàÅÂ ¤Ø³µéÍ§ÊÍ¹©Ñ¹ÍÕ¡àÂÍÐ";
+  $arrPostData['messages'][0]['text'] = "â”­ç‹—æ²¹è¢–å¨©å‡Œæµ¯çŒ·æ€• ã¸è½¦æ©¥îž¨å‡¸â”­é›‡é“¡å—¦æ‰˜";
 }else{
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "©Ñ¹äÁèà¢éÒã¨¤ÓÊÑè§";
+  $arrPostData['messages'][0]['text'] = "â”­é€›å‡Œå•–æ©æ‚’ã³æƒç‘™";
 }
  
  
@@ -44,5 +44,3 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $result = curl_exec($ch);
 curl_close ($ch);
- 
-?>
