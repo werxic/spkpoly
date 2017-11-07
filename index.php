@@ -9,7 +9,7 @@ $access_token  = 'pwIlcuXib+mh3MODhEytMPdEmMODfG2vk5kwkqN5ohp7goT5tpxUIsaMr7BJ9j
 
 $bot = new BOT_API($channelSecret, $access_token);
 	
-$bot->sendMessageNew('[Your userId / User Id]', 'Hello World !!');
+$bot->sendMessageNew('U6c1efc712a4da5f25c3d9e4430bdaedb', 'Hello World !!');
 
 if ($bot->isSuccess()) {
 	echo 'Succeeded!';
