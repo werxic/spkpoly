@@ -30,7 +30,7 @@ if($arrJson['events'][0]['message']['text'] == "是咽凑"){
   $arrPostData = array();
   $arrPostData['replyToken'] = $arrJson['events'][0]['replyToken'];
   $arrPostData['messages'][0]['type'] = "text";
-  $arrPostData['messages'][0]['text'] = "┭逛凌啖橐悒び恃瑙";
+  $arrPostData['messages'][0]['text'] = "ยินดีต้อนรับสู่โปรแกรม ICH";
 }
  
  
