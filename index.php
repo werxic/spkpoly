@@ -18,7 +18,8 @@ if($arrJson['events'][0]['message']['text'] == "mode 1"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "status : อยู่บ้าน";
  
-$servername = "localhost";
+
+$servername = "databases.000webhost.com";
 $username = "id3577019_spkpolyit";
 $password = "spkpoly2017";
 $dbname = "id3577019_ich";
@@ -29,7 +30,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "UPDATE `ich_channel` SET `channel`="ch1",`status`=1 WHERE `channel`="ch1" ";
+$sql = "UPDATE ich_channel  SET status=1 WHERE channel=’ch1’";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
@@ -38,6 +39,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+
 
  
  
