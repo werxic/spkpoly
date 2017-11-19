@@ -22,21 +22,7 @@ if($arrJson['events'][0]['message']['text'] == "mode 1"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "status : อยู่บ้าน";
  
- $conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "UPDATE ich_channel SET status=0 WHERE channel="ch1"";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $conn->error;
-}
-
-$conn->close();
+ 
  
 }else if($arrJson['events'][0]['message']['text'] == "mode 2"){
   $arrPostData = array();
