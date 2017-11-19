@@ -19,26 +19,6 @@ if($arrJson['events'][0]['message']['text'] == "mode 1"){
   $arrPostData['messages'][0]['text'] = "status : อยู่บ้าน";
  
 
-$servername = "databases.000webhost.com";
-$username = "id3577019_spkpolyit";
-$password = "spkpoly2017";
-$dbname = "id3577019_ich";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "UPDATE ich_channel  SET status=1 WHERE channel=’ch1’";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . $conn->error;
-}
-
-$conn->close();
 
 
  
