@@ -28,7 +28,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "UPDATE ich_channel SET `status`=0 WHERE `channel`="ch1"";
+$sql = "UPDATE ich_channel SET status=0 WHERE channel="ch1"";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
