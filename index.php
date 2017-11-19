@@ -18,7 +18,7 @@ if($arrJson['events'][0]['message']['text'] == "mode 1"){
   $arrPostData['messages'][0]['type'] = "text";
   $arrPostData['messages'][0]['text'] = "status : อยู่บ้าน";
  
-$servername = "localhost";
+$servername = "ich.000webhostapp.com";
 $username = "id3577019_spkpolyit";
 $password = "spkpoly2017";
 $dbname = "id3577019_ich";
