@@ -27,8 +27,8 @@ foreach ($client->parseEvents() as $event) {
 						$mixmsg = 'คุณกำลังจะพักผ่อน';
 						$mode_D = 0;
 					}else if($message['text']==="mode D"){
-			    		$mixmsg = 'คุณกำลังควบคุมด้วยมือ';
-						$mode_D = 1;
+			    		$mixmsg = $mode_D;
+						
 					}else if($message['text']==="bed 1" and $mode_D == 0){
 						$mixmsg = 'ไฟห้องนอน:เปิด';
 					}else if($message['text']==="bed 0" and $mode_D == 1){
