@@ -42,7 +42,11 @@ foreach ($client->parseEvents() as $event) {
 						$mixmsg = 'ไฟห้องครัว:เปิด';
 					}else if($message['text']==="kit 0" AND $mode_D == 1){
 						$mixmsg = 'ไฟห้องครัว:ปิด';
-					}else{	$mixmsg = 'What is the mode?';
+					}else if($message['text']==="fan 1" AND $mode_D == 1){
+						$mixmsg = 'พัดลมห้องนั่งเล่น:เปิด';
+					}else if($message['text']==="fan 0" AND $mode_D == 1){
+						$mixmsg = 'พัดลมห้องนั่งเล่น:ปิด';
+					}   else{	$mixmsg = 'What is the mode?';
 					}
 					
 
