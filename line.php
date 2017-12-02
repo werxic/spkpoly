@@ -24,6 +24,7 @@ foreach ($client->parseEvents() as $event) {
 					}else if($message['text']==="mode C"){
 						$mixmsg = 'คุณกำลังจะพักผ่อน';
 					}else if($message['text']==="mode D"){
+			    			mode_D++;
 			    			while(mode_D==1){
 							if($message['text']==="bed 1"){
 								$mixmsg = 'ไฟห้องนอน:เปิด';
