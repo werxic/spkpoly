@@ -19,42 +19,28 @@ foreach ($client->parseEvents() as $event) {
                     getMqttfromlineMsg($message['text']);
                     if($message['text']==="mode A"){
 						$mixmsg = 'คุณกำลังอยู่บ้าน';
+						$mode_D = 0;
 					}else if($message['text']==="mode B"){
 						$mixmsg = 'คุณไม่อยู่บ้าน';
+						$mode_D = 0;
 					}else if($message['text']==="mode C"){
 						$mixmsg = 'คุณกำลังจะพักผ่อน';
+						$mode_D = 0;
 					}else if($message['text']==="mode D"){
-			    			$mixmsg = 'คุณกำลังควบคุมด้วยมือ';			
-			    			$mode_D=1;
-			    			while($mode_D==0){
-							$client->replyMessage(array(
-                        				'replyToken' => $event['replyToken'],
-                        				'messages' => array(
-                            				array(
-                                			'type' => 'text',
-                                			'text' => $mixmsg
-                            				)
-                        				)
-                    					));
-							if($message['text']==="bed 1"){
-								$mixmsg = 'ไฟห้องนอน:เปิด';
-							}else if($message['text']==="bed 0"){
-								$mixmsg = 'ไฟห้องนอน:ปิด';
-							}else if($message['text']==="liv 1"){
-								$mixmsg = 'ไฟห้องนั่งเล่น:เปิด';
-							}else if($message['text']==="liv 0"){
-								$mixmsg = 'ไฟห้องนั่งเล่น:ปิด';
-							}else if($message['text']==="kit 1"){
-								$mixmsg = 'ไฟห้องครัว:เปิด';
-							}else if($message['text']==="kit 0"){
-								$mixmsg = 'ไฟห้องครัว:ปิด';
-							}
-							getMqttfromlineMsg($message['text']);
-							if($message['text']==="mode C" or $message['text']==="mode B" or $message['text']==="mode A"){
-								$mode_D=0;
-							}
-						}
-						
+			    		$mixmsg = 'คุณกำลังควบคุมด้วยมือ';
+						$mode_D = 1;
+					}else if($message['text']==="bed 1" and $mode_D == 1){
+						$mixmsg = 'ไฟห้องนอน:เปิด';
+					}else if($message['text']==="bed 0" and $mode_D == 1){
+						$mixmsg = 'ไฟห้องนอน:ปิด';
+					}else if($message['text']==="liv 1" and $mode_D == 1){
+						$mixmsg = 'ไฟห้องนั่งเล่น:เปิด';
+					}else if($message['text']==="liv 0" and $mode_D == 1){
+						$mixmsg = 'ไฟห้องนั่งเล่น:ปิด';
+					}else if($message['text']==="kit 1" and $mode_D == 1){
+						$mixmsg = 'ไฟห้องครัว:เปิด';
+					}else if($message['text']==="kit 0" and $mode_D == 1){
+						$mixmsg = 'ไฟห้องครัว:ปิด';
 					}else{	$mixmsg = 'What is the mode?';
 					}
 					
