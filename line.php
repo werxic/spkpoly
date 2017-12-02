@@ -32,7 +32,7 @@ foreach ($client->parseEvents() as $event) {
 						
 					}else if($message['text']==="bed 1" and $mode_D == 0){
 						$mixmsg = 'ไฟห้องนอน:เปิด';
-					}else if($message['text']==="bed 0" and $mode_D == 1){
+					}else if($message['text']==="bed B" and $mode_D == 1){
 						$mixmsg = 'ไฟห้องนอน:ปิด';
 					}else if($message['text']==="liv 1" and $mode_D == 1){
 						$mixmsg = 'ไฟห้องนั่งเล่น:เปิด';
