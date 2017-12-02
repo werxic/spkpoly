@@ -17,7 +17,11 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
 
                     getMqttfromlineMsg($message['text']);
-                    $mixmsg = 'คุณกำลังอยู่บ้าน';
+                    if($message['text']=="mode A"){
+						$mixmsg = 'คุณกำลังอยู่บ้าน';
+					}else if($message['text']=="mode B"){
+						$mixmsg = 'คุณไม่อยู่บ้าน';
+					}
 
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
