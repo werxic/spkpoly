@@ -24,8 +24,18 @@ foreach ($client->parseEvents() as $event) {
 					}else if($message['text']==="mode C"){
 						$mixmsg = 'คุณกำลังจะพักผ่อน';
 					}else if($message['text']==="mode D"){
-			    			mode_D++;
-			    			while(mode_D==1){
+			    			$mixmsg = 'คุณกำลังควบคุมด้วยมือ';			
+			    			$mode_D++;
+			    			while($mode_D==1){
+							$client->replyMessage(array(
+                        				'replyToken' => $event['replyToken'],
+                        				'messages' => array(
+                            				array(
+                                			'type' => 'text',
+                                			'text' => $mixmsg
+                            				)
+                        				)
+                    					));
 							if($message['text']==="bed 1"){
 								$mixmsg = 'ไฟห้องนอน:เปิด';
 							}else if($message['text']==="bed 0"){
@@ -39,8 +49,12 @@ foreach ($client->parseEvents() as $event) {
 							}else if($message['text']==="kit 0"){
 								$mixmsg = 'ไฟห้องครัว:ปิด';
 							}
+							getMqttfromlineMsg($message['text']);
+							if($message['text']==="mode C" or $message['text']==="mode B" or $message['text']==="mode A"){
+								$mode_D--;
+							}
 						}
-						$mixmsg = 'คุณกำลังควบคุมด้วยมือ';
+						
 					}else{	$mixmsg = 'What is the mode?';
 					}
 					
