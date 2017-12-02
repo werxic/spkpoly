@@ -21,6 +21,10 @@ foreach ($client->parseEvents() as $event) {
 						$mixmsg = 'คุณกำลังอยู่บ้าน';
 					}else if($message['text']==="mode B"){
 						$mixmsg = 'คุณไม่อยู่บ้าน';
+					}else if($message['text']==="mode C"){
+						$mixmsg = 'คุณกำลังจะพักผ่อน';
+					}else if($message['text']==="mode D"){
+						$mixmsg = 'คุณกำลังควบคุมด้วยมือ';
 					}
 
                     $client->replyMessage(array(
