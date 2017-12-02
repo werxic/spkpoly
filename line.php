@@ -25,7 +25,7 @@ foreach ($client->parseEvents() as $event) {
 						$mixmsg = 'คุณกำลังจะพักผ่อน';
 					}else if($message['text']==="mode D"){
 			    			$mixmsg = 'คุณกำลังควบคุมด้วยมือ';			
-			    			$mode_D++;
+			    			$mode_D=1;
 			    			while($mode_D==1){
 							$client->replyMessage(array(
                         				'replyToken' => $event['replyToken'],
