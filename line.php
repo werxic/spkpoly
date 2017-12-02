@@ -30,17 +30,17 @@ foreach ($client->parseEvents() as $event) {
 			    			$mode_D = 1;
 			    			$mixmsg = $mode_D;
 						
-					}else if($message['text']==="bed 1" and $mode_D == 0){
+					}else if($message['text']==="bed 1" AND $mode_D == 0){
 						$mixmsg = 'ไฟห้องนอน:เปิด';
-					}else if($message['text']==="bed B" and $mode_D == 1){
+					}else if($message['text']==="bed B" AND $mode_D == 1){
 						$mixmsg = 'ไฟห้องนอน:ปิด';
-					}else if($message['text']==="liv 1" and $mode_D == 1){
+					}else if($message['text']==="liv 1" AND $mode_D == 1){
 						$mixmsg = 'ไฟห้องนั่งเล่น:เปิด';
-					}else if($message['text']==="liv 0" and $mode_D == 1){
+					}else if($message['text']==="liv 0" AND $mode_D == 1){
 						$mixmsg = 'ไฟห้องนั่งเล่น:ปิด';
-					}else if($message['text']==="kit 1" and $mode_D == 1){
+					}else if($message['text']==="kit 1" AND $mode_D == 1){
 						$mixmsg = 'ไฟห้องครัว:เปิด';
-					}else if($message['text']==="kit 0" and $mode_D == 1){
+					}else if($message['text']==="kit 0" AND $mode_D == 1){
 						$mixmsg = 'ไฟห้องครัว:ปิด';
 					}else{	$mixmsg = 'What is the mode?';
 					}
