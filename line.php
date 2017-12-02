@@ -26,7 +26,7 @@ foreach ($client->parseEvents() as $event) {
 					}else if($message['text']==="mode D"){
 			    			$mixmsg = 'คุณกำลังควบคุมด้วยมือ';			
 			    			$mode_D=1;
-			    			while($mode_D==1){
+			    			while($mode_D===1){
 							$client->replyMessage(array(
                         				'replyToken' => $event['replyToken'],
                         				'messages' => array(
@@ -51,7 +51,7 @@ foreach ($client->parseEvents() as $event) {
 							}
 							getMqttfromlineMsg($message['text']);
 							if($message['text']==="mode C" or $message['text']==="mode B" or $message['text']==="mode A"){
-								$mode_D--;
+								$mode_D=0;
 							}
 						}
 						
