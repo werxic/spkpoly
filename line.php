@@ -19,13 +19,13 @@ foreach ($client->parseEvents() as $event) {
                     getMqttfromlineMsg($message['text']);
                     			if($message['text']==="mode A"){
 						$mixmsg = 'คุณกำลังอยู่บ้าน';
-						$mode_D = 0;
+						$mode_D = 4;
 					}else if($message['text']==="mode B"){
 						$mixmsg = 'คุณไม่อยู่บ้าน';
-						$mode_D = 0;
+						$mode_D = 3;
 					}else if($message['text']==="mode C"){
 						$mixmsg = 'คุณกำลังจะพักผ่อน';
-						$mode_D = 0;
+						$mode_D = 2;
 					}else if($message['text']==="mode D"){
 			    			$mode_D = 1;
 			    			$mixmsg = $mode_D;
