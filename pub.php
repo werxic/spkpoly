@@ -10,15 +10,15 @@
  
 	if ($lineMsg === "mode A"){ 	
       $topic = "ich_mode";
-      $msg = '1';
+      $msg = 1;
       pubMqtt($topic,$msg);
     }else if ($lineMsg === "mode B"){ 	
       $topic = "ich_mode";
-      $msg = '2';
+      $msg = 2;
       pubMqtt($topic,$msg);
     }else if ($lineMsg === "mode C"){ 	
       $topic = "ich_mode";
-      $msg = '3';
+      $msg = 3;
       pubMqtt($topic,$msg);
     }else if ($lineMsg === "mode D"){ 	
       $topic = "ich_mode";
