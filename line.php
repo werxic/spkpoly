@@ -17,7 +17,7 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
 
                     getMqttfromlineMsg($message['text']);
-                    if($message['text']==="mode A"){
+                    			if($message['text']==="mode A"){
 						$mixmsg = 'คุณกำลังอยู่บ้าน';
 						$mode_D = 0;
 					}else if($message['text']==="mode B"){
@@ -29,10 +29,7 @@ foreach ($client->parseEvents() as $event) {
 					}else if($message['text']==="mode D"){
 			    			$mode_D = 1;
 			    			$mixmsg = $mode_D;
-						
-					}else{	$mixmsg = 'What is the mode?';
-					}
-			    		if($message['text']==="bed 1" AND $mode_D == 1){
+					}else if($message['text']==="bed 1" AND $mode_D == 1){
 						$mixmsg = 'ไฟห้องนอน:เปิด';
 					}else if($message['text']==="bed 0" AND $mode_D == 1){
 						$mixmsg = 'ไฟห้องนอน:ปิด';
@@ -48,7 +45,7 @@ foreach ($client->parseEvents() as $event) {
 						$mixmsg = 'พัดลมห้องนั่งเล่น:เปิด';
 					}else if($message['text']==="fan 0" AND $mode_D == 1){
 						$mixmsg = 'พัดลมห้องนั่งเล่น:ปิด';
-					}   else{	$mixmsg = 'คุณใช้งานคำสั่งไม่ถูกต้อง';
+					}else{$mixmsg = 'คุณใช้งานคำสั่งไม่ถูกต้อง';
 					}
 					
 
