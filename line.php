@@ -29,21 +29,21 @@ foreach ($client->parseEvents() as $event) {
 					}else if($message['text']==="mode D"){
 			    			$mode_D = 1;
 			    			$mixmsg = 'คุณกำลังควบคุมด้วยมือ';
-					}else if($message['text']==="bed 1" AND $mode_D == "1"){
+					}else if($message['text']==="bed 1" AND $mode_D === 1){
 						$mixmsg = 'ไฟห้องนอน:เปิด';
-					}else if($message['text']==="bed 0" AND $mode_D == 1){
+					}else if($message['text']==="bed 0" AND $mode_D === 1){
 						$mixmsg = 'ไฟห้องนอน:ปิด';
-					}else if($message['text']==="liv 1" AND $mode_D == 1){
+					}else if($message['text']==="liv 1" AND $mode_D === 1){
 						$mixmsg = 'ไฟห้องนั่งเล่น:เปิด';
-					}else if($message['text']==="liv 0" AND $mode_D == 1){
+					}else if($message['text']==="liv 0" AND $mode_D === 1){
 						$mixmsg = 'ไฟห้องนั่งเล่น:ปิด';
-					}else if($message['text']==="kit 1" AND $mode_D == 1){
+					}else if($message['text']==="kit 1" AND $mode_D === 1){
 						$mixmsg = 'ไฟห้องครัว:เปิด';
-					}else if($message['text']==="kit 0" AND $mode_D == 1){
+					}else if($message['text']==="kit 0" AND $mode_D === 1){
 						$mixmsg = 'ไฟห้องครัว:ปิด';
-					}else if($message['text']==="fan 1" AND $mode_D == 1){
+					}else if($message['text']==="fan 1" AND $mode_D === 1){
 						$mixmsg = 'พัดลมห้องนั่งเล่น:เปิด';
-					}else if($message['text']==="fan 0" AND $mode_D == 1){
+					}else if($message['text']==="fan 0" AND $mode_D === 1){
 						$mixmsg = 'พัดลมห้องนั่งเล่น:ปิด';
 					}else{$mixmsg = 'คุณใช้งานคำสั่งไม่ถูกต้อง';
 					}
